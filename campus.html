@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus | El Roble Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f1f8f4;
+            color: #26382d;
+        }
+
+        /* =========================
+           BANNER
+        ========================= */
+
+        .banner {
+            height: 240px;
+            width: 100%;
+
+            background-image: url("banner.png");
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(8,70,35,0.42);
+        }
+
+        .banner h1 {
+            position: relative;
+            z-index: 2;
+
+            color: white;
+
+            font-size: 48px;
+
+            text-shadow: 3px 3px 8px black;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu {
+            background: #0b3d22;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            padding: 8px;
+        }
+
+        .menu a {
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            margin: 5px 14px;
+
+            padding: 12px 17px;
+
+            border-radius: 8px;
+        }
+
+        .menu a:hover {
+            background: #dff2e5;
+            color: #0b3d22;
+        }
+
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-section {
+            width: 90%;
+            max-width: 1150px;
+
+            margin: 45px auto 20px;
+
+            text-align: center;
+        }
+
+        .video-section h2 {
+            color: #0b3d22;
+
+            font-size: 34px;
+
+            margin-bottom: 20px;
+        }
+
+        .video-section p {
+            color: #53655a;
+
+            margin-bottom: 25px;
+
+            line-height: 1.6;
+        }
+
+        .video-container {
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 17px;
+
+            box-shadow:
+                0 5px 18px rgba(11,61,34,0.15);
+        }
+
+        .video-container video {
+            width: 100%;
+
+            max-height: 550px;
+
+            display: block;
+
+            border-radius: 12px;
+
+            background: black;
+        }
+
+
+        /* =========================
+           TITULO
+        ========================= */
+
+        .title {
+            text-align: center;
+
+            padding: 55px 20px 35px;
+        }
+
+        .title h2 {
+            font-size: 40px;
+
+            color: #0b3d22;
+
+            margin-bottom: 15px;
+        }
+
+        .title p {
+            max-width: 850px;
+
+            margin: auto;
+
+            color: #53655a;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CAMPUS
+        ========================= */
+
+        .campus {
+            width: 90%;
+
+            max-width: 1150px;
+
+            margin: auto auto 70px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .place {
+            background: white;
+
+            border-radius: 17px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 18px rgba(11,61,34,0.12);
+
+            transition: 0.3s;
+        }
+
+        .place:hover {
+            transform: translateY(-7px);
+        }
+
+        .place img {
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+        }
+
+        .place-content {
+            padding: 25px;
+        }
+
+        .place-content h3 {
+            color: #146b3a;
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .place-content p {
+            color: #53655a;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #082f1a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #d5eadb;
+
+            margin: 5px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .banner {
+                height: 190px;
+            }
+
+            .banner h1 {
+                font-size: 34px;
+            }
+
+            .campus {
+                grid-template-columns: 1fr;
+            }
+
+            .video-section h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BANNER
+    ========================= -->
+
+    <div class="banner">
+
+        <h1>El Roble Academy</h1>
+
+    </div>
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <nav class="menu">
+
+        <a href="index.html">Index</a>
+
+        <a href="About us.html">About Us</a>
+
+        <a href="history.html">History</a>
+
+        <a href="achievements.html">Achievements</a>
+
+        <a href="campus.html">Campus</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- =========================
+         VIDEO
+    ========================= -->
+
+    <section class="video-section">
+
+        <h2>Welcome to Our Campus</h2>
+
+        <p>
+            Take a look at some of the spaces and experiences
+            that make El Roble Academy a special place to learn.
+        </p>
+
+        <div class="video-container">
+
+            <video controls>
+
+                <source src="video.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TITULO
+    ========================= -->
+
+    <section class="title">
+
+        <h2>Our Campus</h2>
+
+        <p>
+            Explore some of the spaces where students learn,
+            participate in activities and create unforgettable
+            memories at El Roble Academy.We have one classroom for each grade, as well as a dance studio, a very large sports court, primary and secondary school areas, and a cafeteria.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CAMPUS
+    ========================= -->
+
+    <section class="campus">
+
+
+        <!-- SCHOOL GROUNDS -->
+
+        <div class="place">
+
+            <div class="place-content">
+
+                <h3>School Grounds</h3>
+
+                <p>
+                    Our school grounds provide comfortable spaces
+                    where students can interact and enjoy their
+                    school experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLASSROOMS -->
+
+        <div class="place">
+
+            
+
+            <div class="place-content">
+
+                <h3>Classrooms</h3>
+
+                <p>
+                    Our classrooms are spaces dedicated to learning,
+                    teamwork and academic development.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPORTS -->
+
+        <div class="place">
+
+           
+
+            <div class="place-content">
+
+                <h3>Sports Areas</h3>
+
+                <p>
+                    Students can participate in sports and different
+                    activities that promote teamwork and discipline.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIVITIES -->
+
+        <div class="place">
+
+           
+
+            <div class="place-content">
+
+                <h3>Activity Areas</h3>
+
+                <p>
+                    Different areas of the campus are used for
+                    events, projects and activities throughout
+                    the school year.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>El Roble Academy</h3>
+
+        <p>Learning today, building tomorrow.</p>
+
+        <p>© 2026 El Roble Academy. All Rights Reserved.</p>
+
+    </footer>
+
+
+</body>
+
+</html>

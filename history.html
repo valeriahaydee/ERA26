@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>History | El Roble Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f8f4;
+            color: #26382d;
+        }
+
+
+        /* =========================
+           BANNER
+        ========================== */
+
+        .banner {
+            width: 100%;
+            height: 240px;
+
+            background-image: url("banner.png");
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(8, 70, 35, 0.42);
+        }
+
+        .banner h1 {
+            position: relative;
+            z-index: 2;
+
+            color: white;
+
+            font-size: 48px;
+
+            text-align: center;
+
+            text-shadow: 3px 3px 8px black;
+        }
+
+
+        /* =========================
+           MENU
+        ========================== */
+
+        .menu {
+            width: 100%;
+
+            min-height: 65px;
+
+            background: linear-gradient(
+                90deg,
+                #0b3d22,
+                #176b3d,
+                #0b3d22
+            );
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.20);
+        }
+
+        .menu a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            margin: 5px 14px;
+
+            padding: 12px 17px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #dff2e5;
+
+            color: #0b3d22;
+        }
+
+
+        /* =========================
+           TITULO
+        ========================== */
+
+        .title {
+            text-align: center;
+
+            padding: 55px 20px 35px;
+        }
+
+        .title h2 {
+            color: #0b3d22;
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .title p {
+            max-width: 850px;
+
+            margin: auto;
+
+            color: #53655a;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           HISTORIA PRINCIPAL
+        ========================== */
+
+        .history-intro {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 0 auto 60px;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            padding: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 40px;
+
+            box-shadow:
+                0 6px 20px rgba(11, 61, 34, 0.12);
+        }
+
+        .history-intro img {
+            width: 45%;
+
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            border: 5px solid #dff2e5;
+        }
+
+        .history-text {
+            flex: 1;
+        }
+
+        .history-text h2 {
+            color: #146b3a;
+
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+        .history-text p {
+            color: #53655a;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           TIMELINE
+        ========================== */
+
+        .timeline-section {
+            background-color: #dff2e5;
+
+            padding: 65px 20px 75px;
+        }
+
+        .timeline-title {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .timeline-title h2 {
+            color: #0b3d22;
+
+            font-size: 36px;
+
+            margin-bottom: 12px;
+        }
+
+        .timeline-title p {
+            color: #53655a;
+
+            font-size: 17px;
+        }
+
+
+        .timeline {
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 4px;
+
+            background-color: #2e8b57;
+
+            transform: translateX(-50%);
+        }
+
+
+        .timeline-item {
+            width: 50%;
+
+            padding: 20px 40px;
+
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+
+            text-align: left;
+        }
+
+
+        .timeline-dot {
+            position: absolute;
+
+            width: 20px;
+
+            height: 20px;
+
+            background-color: #146b3a;
+
+            border: 4px solid #dff2e5;
+
+            border-radius: 50%;
+
+            top: 30px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+
+        .timeline-card {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 5px 15px rgba(11, 61, 34, 0.12);
+        }
+
+        .timeline-card h3 {
+            color: #146b3a;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-card h4 {
+            color: #2e8b57;
+
+            font-size: 17px;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-card p {
+            color: #53655a;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           PHOTO SECTION
+        ========================== */
+
+        .history-photos {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 65px auto;
+
+            text-align: center;
+        }
+
+        .history-photos h2 {
+            color: #0b3d22;
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .history-photos > p {
+            color: #53655a;
+
+            max-width: 800px;
+
+            margin: 0 auto 35px;
+
+            line-height: 1.6;
+        }
+
+        .photos {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .photos img {
+            width: 100%;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 6px 18px rgba(11, 61, 34, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .photos img:hover {
+            transform: scale(1.03);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            width: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #082f1a,
+                #0b3d22,
+                #082f1a
+            );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #d5eadb;
+
+            margin: 5px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .history-intro {
+                flex-direction: column;
+            }
+
+            .history-intro img {
+                width: 100%;
+            }
+
+            .photos {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+
+                left: 0 !important;
+
+                text-align: left !important;
+
+                padding-left: 60px;
+
+                padding-right: 10px;
+            }
+
+            .timeline-item .timeline-dot {
+                left: 10px !important;
+                right: auto !important;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .banner {
+                height: 190px;
+            }
+
+            .banner h1 {
+                font-size: 34px;
+            }
+
+            .menu {
+                padding: 10px;
+            }
+
+            .menu a {
+                font-size: 15px;
+            }
+
+            .title h2 {
+                font-size: 32px;
+            }
+
+            .history-intro {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BANNER
+    ========================== -->
+
+    <div class="banner">
+
+        <h1>El Roble Academy</h1>
+
+    </div>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav class="menu">
+
+        <a href="index.html">Index</a>
+
+        <a href="About us.html">About Us</a>
+
+        <a href="history.html">History</a>
+
+        <a href="achievements.html">Achievements</a>
+
+        <a href="campus.html">Campus</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- =========================
+         TITULO
+    ========================== -->
+
+    <section class="title">
+
+        <h2>Our History</h2>
+
+        <p>
+            Learn about the story, growth, and important moments
+            that have helped make El Roble Academy the school
+            it is today.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORIA PRINCIPAL
+    ========================== -->
+
+    <section class="history-intro">
+
+        <img src="history.jpeg" alt="El Roble Academy">
+
+        <div class="history-text">
+
+            <h2>The Story of El Roble Academy</h2>
+
+            <p>
+                El Roble Academy has grown throughout the years
+                thanks to the dedication of its teachers, students,
+                families, and staff.
+            </p>
+
+            <p>
+                Since its beginnings, the school has worked to
+                provide students with knowledge, values, and
+                opportunities to grow both academically and
+                personally.
+            </p>
+
+            <p>
+                Today, El Roble Academy continues building its
+                future while keeping the values and traditions
+                that are an important part of its identity.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TIMELINE
+    ========================== -->
+
+    <section class="timeline-section">
+
+        <div class="timeline-title">
+
+            <h2>Important Moments</h2>
+
+            <p>
+                Some important moments in the history of
+                El Roble Academy.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- MOMENTO 1 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>The beginning</h3>
+
+                    <h4></h4>
+
+                    <p>
+                        In its early days, El Roble Academy was smaller; there weren't as many classrooms or a computer lab, and there were fewer students than there are now.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTO 2 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>Growing as a School</h3>
+
+                    <h4></h4>
+
+                    <p>
+                        Over time, more classes were introduced, and it grew through small changes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTO 3 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>New Opportunities</h3>
+
+                    <h4></h4>
+
+                    <p>
+                        The school expanded significantly; a volleyball academy was established, and the team won several trophies. Mr. Diego introduced a muay thai class, a computer lab was set up, the staff grew, and new classrooms were built. The student body also increased, and students participated in competitions where they won many trophies; there is also a dance class where students showcase their dancing talent.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTO 4 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>2026</h3>
+
+                    <h4>El Roble Today</h4>
+
+                    <p>
+                       El Roble remains a great institution, even though its extracurricular classes are no longer the huge draw they once were and have scaled back; nevertheless, there have been several upgrades, such as the cafeteria, the playground, and the sports court, among other things.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTOS DE HISTORIA
+    ========================== -->
+
+    <section class="history-photos">
+
+        <h2>Memories Through the Years</h2>
+
+        <p>
+            These photographs show some of the memories and
+            special moments that have been part of the history
+            of El Roble Academy.
+        </p>
+
+
+        <div class="photos">
+
+            <img src="history1.jpeg" alt="El Roble Academy history">
+
+            <img src="history2.jpeg" alt="El Roble Academy history">
+
+            <img src="history3.jpeg" alt="El Roble Academy history">
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>El Roble Academy</h3>
+
+        <p>
+            Learning today, building tomorrow.
+        </p>
+
+        <p>
+            © 2026 El Roble Academy. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+

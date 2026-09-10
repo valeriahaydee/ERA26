@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | El Roble Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f8f4;
+            color: #26382d;
+        }
+
+        /* =========================
+           BANNER
+        ========================== */
+
+        .banner {
+            width: 100%;
+            height: 240px;
+
+            background-image: url("banner.png");
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(8, 70, 35, 0.42);
+        }
+
+        .banner h1 {
+            position: relative;
+            z-index: 2;
+
+            color: white;
+            font-size: 48px;
+
+            text-align: center;
+
+            text-shadow: 3px 3px 8px black;
+        }
+
+
+        /* =========================
+           MENU
+        ========================== */
+
+        .menu {
+            width: 100%;
+
+            min-height: 65px;
+
+            background: linear-gradient(
+                90deg,
+                #0b3d22,
+                #176b3d,
+                #0b3d22
+            );
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.20);
+        }
+
+        .menu a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            margin: 5px 14px;
+
+            padding: 12px 17px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #dff2e5;
+            color: #0b3d22;
+        }
+
+
+        /* =========================
+           TITULO
+        ========================== */
+
+        .title {
+            text-align: center;
+
+            padding: 55px 20px 35px;
+        }
+
+        .title h2 {
+            color: #0b3d22;
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .title p {
+            max-width: 850px;
+
+            margin: auto;
+
+            color: #53655a;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           MAESTROS
+        ========================== */
+
+        .teachers {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 0 auto 70px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        .teacher-card {
+            background-color: white;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            display: flex;
+
+            gap: 25px;
+
+            align-items: center;
+
+            border-left: 6px solid #2e8b57;
+
+            box-shadow:
+                0 6px 20px rgba(11, 61, 34, 0.12);
+
+            transition: 0.3s;
+        }
+
+
+        .teacher-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 25px rgba(11, 61, 34, 0.20);
+        }
+
+
+        .teacher-card img {
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #b8ddc1;
+
+            flex-shrink: 0;
+        }
+
+
+        .teacher-info h3 {
+            color: #146b3a;
+
+            font-size: 24px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .teacher-info h4 {
+            color: #2e8b57;
+
+            font-size: 16px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .teacher-info p {
+            color: #53655a;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+        }
+
+/* =========================
+   MENSAJE SOBRE LOS MAESTROS
+========================== */
+
+.teacher-message {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 70px;
+    padding: 45px 50px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    border-top: 6px solid #2e8b57;
+    box-shadow: 0 6px 20px rgba(11, 61, 34, 0.12);
+}
+
+.teacher-message h2 {
+    color: #0b3d22;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.teacher-message p {
+    color: #53655a;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.teacher-message p:last-child {
+    margin-bottom: 0;
+}
+
+
+        /* =========================
+           FOTOS JUNTOS
+        ========================== */
+
+        .together {
+            background-color: #dff2e5;
+
+            padding: 60px 20px 70px;
+
+            text-align: center;
+        }
+
+
+        .together h2 {
+            color: #0b3d22;
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .together > p {
+            max-width: 800px;
+
+            margin: 0 auto 35px;
+
+            color: #53655a;
+
+            line-height: 1.6;
+        }
+
+
+        .photos-together {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        .photos-together img {
+            width: 100%;
+
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 8px 20px rgba(11, 61, 34, 0.18);
+
+            transition: 0.3s;
+        }
+
+
+        .photos-together img:hover {
+            transform: scale(1.02);
+        }
+
+```css
+/* =========================
+   STUDENTS
+========================== */
+
+.students {
+    width: 100%;
+    background-color: #eef7f1;
+    padding: 65px 20px 75px;
+}
+
+.students-title {
+    max-width: 850px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.students-title h2 {
+    color: #0b3d22;
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.students-title p {
+    color: #53655a;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   STUDENT BOXES
+========================== */
+
+.students-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.student-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+
+    border-top: 5px solid #2e8b57;
+
+    box-shadow:
+        0 6px 18px rgba(11, 61, 34, 0.12);
+
+    transition: 0.3s;
+}
+
+.student-box:hover {
+    transform: translateY(-6px);
+}
+
+.student-box h3 {
+    color: #146b3a;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.student-box p {
+    color: #53655a;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   STUDENT PHOTOS
+========================== */
+
+.student-photos {
+    width: 90%;
+    max-width: 1100px;
+    margin: 45px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.student-photos img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+    border: 5px solid white;
+
+    box-shadow:
+        0 6px 18px rgba(11, 61, 34, 0.15);
+
+    transition: 0.3s;
+}
+
+.student-photos img:hover {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 850px) {
+
+    .students-content {
+        grid-template-columns: 1fr;
+    }
+
+    .student-photos {
+        grid-template-columns: 1fr;
+    }
+
+}
+```
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            width: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #082f1a,
+                #0b3d22,
+                #082f1a
+            );
+
+            color: black;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        footer h3 {
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+
+        footer p {
+            color: #d5eadb;
+
+            margin: 5px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .teachers {
+                grid-template-columns: 1fr;
+            }
+
+            .photos-together {
+                grid-template-columns: 1fr;
+            }
+
+            .teacher-card {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .banner {
+                height: 190px;
+            }
+
+            .banner h1 {
+                font-size: 34px;
+            }
+
+            .menu {
+                padding: 10px;
+            }
+
+            .menu a {
+                font-size: 15px;
+            }
+
+            .title h2 {
+                font-size: 32px;
+            }
+
+            .photos-together img {
+                height: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         BANNER
+    ========================== -->
+
+    <div class="banner">
+
+        <h1>El Roble Academy</h1>
+
+    </div>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav class="menu">
+
+        <a href="index.html">Index</a>
+
+        <a href="aboutus.html">About Us</a>
+
+        <a href="History.html">History</a>
+
+        <a href="achievements.html">Achievements</a>
+
+        <a href="campus.html">Campus</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- =========================
+         TITULO
+    ========================== -->
+
+    <section class="title">
+
+        <h2>About Us</h2>
+
+        <p>
+            Meet the teachers who are an important part of
+            the El Roble Academy community. Their dedication
+            and passion for education help our students grow
+            every day.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         10 MAESTROS
+    ========================== -->
+
+    <section class="teachers">
+
+
+        <!-- MAESTRO 1 -->
+
+        <div class="teacher-card">
+
+            <img src="lg.jpeg" alt="School principal">
+
+            <div class="teacher-info">
+
+                <h3>Luisa Perez</h3>
+
+                <h4>School Principal</h4>
+
+                <p>
+                    She is a great principal; she cares about us
+                    and is always on top of what is happening
+                    at the school.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 2 -->
+
+        <div class="teacher-card">
+
+            <img src="pt.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Pamela Torres</h3>
+
+                <h4>Counselor</h4>
+
+                <p>
+                   She fosters a positive environment for everyone, ensures there is respect and that things are done right, and encourages us during the classes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 3 -->
+
+        <div class="teacher-card">
+
+            <img src="ol.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Osman Lemuz</h3>
+
+                <h4>Teacher of research, economics, social studies, and philosophy, among other subjects.</h4>
+
+                <p>
+                    He is one of the best teachers; he has an incredible gift for being the teacher most loved by the Class of '26, and he does a great job in every class.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 4 -->
+
+        <div class="teacher-card">
+
+            <img src="rg.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Roberto Gallardo</h3>
+
+                <h4>Teacher of science, physics, chemistry, and technical drawing</h4>
+
+                <p>
+                    He is also a great teacher, very good in the areas he teaches, and students really learn a lot by being his students.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 5 -->
+
+        <div class="teacher-card">
+
+            <img src="dp.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Diego Pavon</h3>
+
+                <h4>Teacher of science, world history, US history, biology,Tic, among others.</h4>
+
+                <p>
+                    He is very knowledgeable, I really admire him in biology class and he likes the Ninja Turtles.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 6 -->
+
+        <div class="teacher-card">
+
+            <img src="lb.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Lidieth Barahona</h3>
+
+                <h4>Counselor</h4>
+
+                <p>
+                    is one of the advisors in our college and she looks considerably serious, but she has her carismatic touch and also she is the one who has the charge of printing the permission sheets for the activities that would be done in the school for the entire students.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 7 -->
+
+        <div class="teacher-card">
+
+            <img src="gb.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Gabriela Bracamonte</h3>
+
+                <h4>Teacher of spanish</h4>
+
+                <p>
+                   is our spanish class teacher and she is recognized for being very strict in her class, but if you catch her in a chill mood, she will be very friendly and talkative.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 8 -->
+
+        <div class="teacher-card">
+
+            <img src="nu.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Nuria Urbizo</h3>
+
+                <h4>Teacher of math</h4>
+
+                <p>
+                is one of the most listed teachers in the whole school and it’s because of her heavy charge of being the math teacher of the whole secondary  students, everyone always give a special attention and focus on her class because of the dedication that it requires, and she also need the whole attention of his students because she explain fast and advance on the different topics in a brief way.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 9 -->
+
+        <div class="teacher-card">
+
+            <img src="mm.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Manuel Morales</h3>
+
+                <h4>Teacher of music</h4>
+
+                <p>
+                     is the one who has the charge of giving the music class and also tooks the responsability of training and give orientation to the marching band of Roble Academy.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAESTRO 10 -->
+
+        <div class="teacher-card">
+
+            <img src="az.jpeg" alt="Teacher">
+
+            <div class="teacher-info">
+
+                <h3>Aaron Zelaya</h3>
+
+                <h4>Teacher of P.E</h4>
+
+                <p>
+                    is the one who give us the physical education class, and he is always very chill and friendly, also talkative, but when it’s his hour, he tooks a strict role and dedicate time to make his students train physically his body.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+<!-- =========================
+     INTRODUCCION DE MAESTROS
+========================== -->
+
+<section class="teacher-message">
+
+    <h2>A Part of Our Teaching Team</h2>
+
+    <p>
+        The teachers shown here are just a part of the amazing
+        teachers who teach at El Roble Academy. There are still
+        many other great teachers, especially in the elementary
+        school, who work every day to help our students learn
+        and grow.
+    </p>
+
+    <p>
+        Together, all of our teachers make a great team. Their
+        dedication, knowledge, and effort help provide our
+        students with a good education and create a positive
+        environment where children can learn, grow, and enjoy
+        their school experience.
+    </p>
+
+</section>
+
+    <!-- =========================
+         FOTOS DE LOS MAESTROS JUNTOS
+    ========================== -->
+
+    <section class="together">
+
+        <h2>Our Teachers Together</h2>
+
+        <p>
+            A look at the teachers who make up an important
+            part of the El Roble Academy family.
+        </p>
+
+
+        <div class="photos-together">
+
+            <img
+                src="1.jpeg"
+                alt="El Roble Academy Family"
+            >
+
+            <img
+                src="2.jpeg"
+                alt="El Roble Academy teachers together"
+            >
+
+        </div>
+
+    </section>
+
+
+<!-- =========================
+     STUDENTS
+========================== -->
+
+<section class="students">
+
+    <div class="students-title">
+
+        <h2>Our Students</h2>
+
+        <p>
+            Students are an important part of the El Roble Academy
+            family. Every day, they learn new things, make friends,
+            participate in activities, and create memories that
+            make their school experience special. There are 150 of us students; we are few, but a big family.
+        </p>
+
+    </div>
+
+
+    <div class="students-content">
+
+        <div class="student-box">
+
+            <h3>Learning and Growing</h3>
+
+            <p>
+                Our students have the opportunity to learn in a
+                positive environment where teachers support them
+                and encourage them to do their best.
+            </p>
+
+        </div>
+
+
+        <div class="student-box">
+
+            <h3>Activities and Teamwork</h3>
+
+            <p>
+                Students also participate in sports, academic
+                activities, celebrations, projects, and other
+                school events. These activities help them develop
+                teamwork, responsibility, and confidence.
+            </p>
+
+        </div>
+
+
+        <div class="student-box">
+
+            <h3>Creating Memories</h3>
+
+            <p>
+                From elementary school to the final years of
+                school, students create friendships and memories
+                that become an important part of their time at
+                El Roble Academy.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOTOS DE ESTUDIANTES -->
+
+    <div class="student-photos">
+
+        <img src="3.jpeg" alt="El Roble Academy students">
+
+        <img src="4.jpeg" alt="El Roble Academy students">
+
+        <img src="5.jpeg" alt="El Roble Academy students">
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>El Roble Academy</h3>
+
+        <p>
+            Learning today, building tomorrow.
+        </p>
+
+        <p>
+            © 2026 El Roble Academy. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
+
